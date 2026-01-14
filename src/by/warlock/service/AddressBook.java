@@ -3,16 +3,24 @@ package by.warlock.service;
 import by.warlock.model.Contact;
 
 public class AddressBook {
+    private int contactNumber;
     private Contact[] contacts;
 
     public AddressBook() {
         contacts = new Contact[100];
+        contactNumber = 0;
     }
 
-    public Contact[] getContacts() {
-        return contacts;
+    public void add (Contact contact) {
+        contacts[contactNumber] = contact;
+        contactNumber++;
     }
-    public void setContacts(Contact[] contacts) {
-        this.contacts = contacts;
+
+    public void delete (int id) {
+        contacts[id] = null;
+    }
+
+    public Contact [] getContacts (){
+          return contacts;
     }
 }

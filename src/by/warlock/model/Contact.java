@@ -10,9 +10,7 @@ public class Contact {
     private String phone;
     private String email;
 
-    public Contact() {
-    }
-
+    public Contact() {}
     public Contact(int id, String fio, String post, String dateOfBirth, String phone, String email) {
         this.id = id;
         this.fio = fio;
@@ -93,6 +91,6 @@ public class Contact {
                 "Должность: " + post + "\n" +
                 "Дата рождения: " + dateOfBirth + "\n" +
                 "Номер телефона: " + phone + "\n" +
-                "Адрес электронной почты: " + email + "\n";
+                "Адрес электронной почты: " + email + "\n \n";
     }
 }
