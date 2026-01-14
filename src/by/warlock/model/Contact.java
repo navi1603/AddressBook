@@ -3,21 +3,31 @@ package by.warlock.model;
 import java.util.Objects;
 
 public class Contact {
+    private int id;
     private String fio;
     private String post;
     private String dateOfBirth;
     private String phone;
     private String email;
 
-    private Contact() {
+    public Contact() {
     }
 
-    public Contact(String fio, String post, String dateOfBirth, String phone, String email) {
+    public Contact(int id, String fio, String post, String dateOfBirth, String phone, String email) {
+        this.id = id;
         this.fio = fio;
         this.post = post;
         this.dateOfBirth = dateOfBirth;
         this.phone = phone;
         this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFio() {
