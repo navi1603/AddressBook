@@ -3,7 +3,7 @@ package by.warlock.service;
 public class MenuNavigator {
 
     public void start(){
-
+        printMenu();
     }
 
     private void printMenu(){

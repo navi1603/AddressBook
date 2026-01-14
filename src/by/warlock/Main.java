@@ -1,8 +1,11 @@
 package by.warlock;
 
-public class Main {
-    static void main(String[] args) {
+import by.warlock.service.MenuNavigator;
 
+public class Main {
+    public static void main(String[] args) {
+        MenuNavigator menu = new MenuNavigator();
+        menu.start();
 
     }
 }
