@@ -1,9 +1,5 @@
 package by.warlock.model;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Objects;
 
 public class Contact {

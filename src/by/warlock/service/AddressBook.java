@@ -16,7 +16,6 @@ public class AddressBook {
         contacts[3] = new Contact(3, "Васильев Иван Иванович", "менеджер", "15.07.1967", "+37529 666 55 55", "lkjasdf@gmail.com");
     }
 
-
     public void addNew(Contact contact) {
         contact.setId(contactNumber);
         contacts[contactNumber] = contact;
