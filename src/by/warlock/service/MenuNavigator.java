@@ -21,7 +21,6 @@ public class MenuNavigator {
             switch (key) {
                 case "1":
                     addContact();
-
                     break;
                 case "2":
                     deleteContact();
@@ -54,31 +53,41 @@ public class MenuNavigator {
         System.out.print("Введите Ф. И. О. контакта: ");
         contact.setFio(br.readLine());
 
-        System.out.println("Должность: ");
+        System.out.print("Должность: ");
         contact.setPost(br.readLine());
 
-        System.out.println("Дата рождения: ");
+        System.out.print("Дата рождения: ");
         contact.setDateOfBirth(br.readLine());
 
-        System.out.println("Номер телефона: ");
+        System.out.print("Номер телефона: ");
         contact.setPhone(br.readLine());
 
-        System.out.println("Адрес электронной почты: ");
+        System.out.print("Адрес электронной почты: ");
         contact.setEmail(br.readLine());
 
-        addressBook.add(contact);
-        System.out.println("Новый контакт добавлен\n" + "или\n" + "Контакт был обновлён");
+        int id = addressBook.findContact(contact);
+        if(id == -1) {
+            addressBook.addNew(contact);
+            System.out.println("Новый контакт добавлен\n" + "или\n" + "Контакт был обновлён");
+        } else {
+            addressBook.update(contact, id);
+            System.out.println("Пользователь " + contact.getFio() + " уже присутствует в списке " +
+                    "контактов, он будет обновлён в соответствии с новыми данными.");
+        }
+
+
     }
 
     private void deleteContact() throws IOException {
         System.out.print("Удаление существующего контакта\n" + "Введите ID контакта: ");
         int id = Integer.parseInt(br.readLine());
 
-        addressBook.delete(id);
+        System.out.println(addressBook.delete(id) ? "Контакт с ID: " + id + " удалён\n":
+                "Пользователь с ID: " +  id + " не найден\n");
     }
 
     private void listContacts() {
-
+        System.out.println(addressBook);
     }
 
     private void exit() {

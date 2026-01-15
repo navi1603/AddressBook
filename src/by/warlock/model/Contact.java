@@ -1,5 +1,9 @@
 package by.warlock.model;
 
+import org.w3c.dom.ls.LSOutput;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Contact {
@@ -11,6 +15,7 @@ public class Contact {
     private String email;
 
     public Contact() {}
+
     public Contact(int id, String fio, String post, String dateOfBirth, String phone, String email) {
         this.id = id;
         this.fio = fio;
@@ -33,7 +38,18 @@ public class Contact {
     }
 
     public void setFio(String fio) {
-        this.fio = fio;
+        String[] newFio = fio.trim().replaceAll("\\s+", " ").split(" ");
+        for (int i = 0; i < newFio.length; i++) {
+            char firstChar = newFio[i].charAt(0);
+            char capitalFirstChar = Character.toUpperCase(firstChar);
+
+            if (firstChar == capitalFirstChar) {
+                continue;
+            }
+            String tmp = capitalFirstChar + newFio[i].substring(1);
+            newFio[i] = tmp;
+        }
+        this.fio = String.join(" ", newFio);
     }
 
     public String getPost() {
@@ -73,16 +89,12 @@ public class Contact {
         if(this == o) return true;
         if (!(o instanceof Contact)) return false;
         Contact contact = (Contact) o;
-        return fio.equals(contact.getFio()) &&
-                post.equals(contact.getPost()) &&
-                dateOfBirth.equals(contact.getDateOfBirth()) &&
-                phone.equals(contact.getPhone()) &&
-                email.equals(contact.getEmail());
+        return fio.equals(contact.getFio());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fio, post, dateOfBirth, phone, email) * 56;
+        return Objects.hash(fio) * 56;
     }
 
     @Override
