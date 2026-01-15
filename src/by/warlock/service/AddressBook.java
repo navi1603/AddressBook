@@ -6,14 +6,9 @@ public class AddressBook {
     private int contactNumber;
     private Contact[] contacts;
 
-    public AddressBook() {
-        contacts = new Contact[100];
+    public AddressBook(Contact [] contacts) {
+        this.contacts = contacts;
         contactNumber = 0;
-
-        contacts[0] = new Contact(0, "Иванов Иван Иванович", "тестировщик", "17.07.1997", "+37529 444 44 44", "lkjasdf@gmail.com");
-        contacts[1] = new Contact(1, "Иванов Петр Иванович", "мебельщик", "19.07.1987", "+37529 556 44 33", "lkjasdf@gmail.com");
-        contacts[2] = new Contact(2, "Иванов Иван Петрович", "разработчик", "10.08.1977", "+37529 555 55 55", "lkjasdf@gmail.com");
-        contacts[3] = new Contact(3, "Васильев Иван Иванович", "менеджер", "15.07.1967", "+37529 666 55 55", "lkjasdf@gmail.com");
     }
 
     public void addNew(Contact contact) {
