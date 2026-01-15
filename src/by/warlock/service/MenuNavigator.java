@@ -65,7 +65,7 @@ public class MenuNavigator {
         contact.setEmail(br.readLine());
 
         int id = addressBook.findContact(contact);
-        if(id == -1) {
+        if (id == -1) {
             addressBook.addNew(contact);
             System.out.println("Новый контакт добавлен\n" + "или\n" + "Контакт был обновлён");
         } else {
@@ -79,8 +79,8 @@ public class MenuNavigator {
         System.out.print("Удаление существующего контакта\n" + "Введите ID контакта: ");
         int id = Integer.parseInt(br.readLine());
 
-        System.out.println(addressBook.delete(id) ? "Контакт с ID: " + id + " удалён\n":
-                "Пользователь с ID: " +  id + " не найден\n");
+        System.out.println(addressBook.delete(id) ? "Контакт с ID: " + id + " удалён\n" :
+                "Пользователь с ID: " + id + " не найден\n");
     }
 
     private void listContacts() {

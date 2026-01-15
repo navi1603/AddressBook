@@ -34,7 +34,7 @@ public class Contact {
     }
 
     public void setFio(String fio) {
-        String[] newFio = fio.trim().replaceAll("\\s+", " ").split(" ");
+        String[] newFio = fio.toLowerCase().trim().replaceAll("\\s+", " ").split(" ");
         for (int i = 0; i < newFio.length; i++) {
             char firstChar = newFio[i].charAt(0);
             char capitalFirstChar = Character.toUpperCase(firstChar);
