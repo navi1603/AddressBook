@@ -3,12 +3,16 @@ package by.warlock.service;
 import by.warlock.model.Contact;
 
 public class AddressBook {
-    private int contactNumber;
+    private int contactNumber = 0;
     private Contact[] contacts;
 
+    //композиция
+    public AddressBook() {
+        contacts = new Contact[100];
+    }
+    //агрегация
     public AddressBook(Contact [] contacts) {
         this.contacts = contacts;
-        contactNumber = 0;
     }
 
     public void addNew(Contact contact) {
