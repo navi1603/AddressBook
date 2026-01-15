@@ -14,9 +14,8 @@ public class MenuNavigator {
 
     public void start() throws IOException {
         do {
-            String key = null;
+            String key = br.readLine();
             printMenu();
-            key = br.readLine();
 
             switch (key) {
                 case "1":
@@ -74,8 +73,6 @@ public class MenuNavigator {
             System.out.println("Пользователь " + contact.getFio() + " уже присутствует в списке " +
                     "контактов, он будет обновлён в соответствии с новыми данными.");
         }
-
-
     }
 
     private void deleteContact() throws IOException {
