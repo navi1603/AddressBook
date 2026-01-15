@@ -58,7 +58,7 @@ public class MenuNavigator {
         contact.setPost(br.readLine());
 
         System.out.println("Дата рождения: ");
-        contact.setPhone(br.readLine());
+        contact.setDateOfBirth(br.readLine());
 
         System.out.println("Номер телефона: ");
         contact.setPhone(br.readLine());

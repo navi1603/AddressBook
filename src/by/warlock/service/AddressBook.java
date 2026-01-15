@@ -23,4 +23,13 @@ public class AddressBook {
     public Contact [] getContacts (){
           return contacts;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder contactsList = new StringBuilder();
+        for (Contact contact : contacts) {
+            contactsList.append(contact.toString());
+        }
+        return contactsList.toString();
+    }
 }

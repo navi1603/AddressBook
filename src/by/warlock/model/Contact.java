@@ -87,7 +87,8 @@ public class Contact {
 
     @Override
     public String toString() {
-        return  "Ф. И. О.: " + fio + "\n" +
+        return  "ID: " + id + "\n" +
+                "Ф. И. О.: " + fio + "\n" +
                 "Должность: " + post + "\n" +
                 "Дата рождения: " + dateOfBirth + "\n" +
                 "Номер телефона: " + phone + "\n" +
