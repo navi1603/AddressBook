@@ -7,6 +7,8 @@ public class AddressBook {
     private Contact[] contacts;
 
     //композиция
+    //Контакт составная часть адресной книги.
+    //Без контактов адресной книги не существует.
     public AddressBook() {
         contacts = new Contact[100];
     }
